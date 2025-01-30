@@ -5,7 +5,7 @@ package uniandes.dpoo.gasolinera.logica;
  */
 public class Empleado
 {
-    /**
+    /** Hola
      * El nombre del empleado
      */
     private String nombre;
