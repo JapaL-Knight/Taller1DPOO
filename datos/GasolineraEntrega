@@ -1,0 +1,13 @@
+tipo:Plis:1:100.0
+tipo:Corriente:1:1.0
+tipo:Disel:1:100.0
+tipo:Vegetal:1:100.0
+surtidor:laura:Plis:0.0:Corriente:0.0:Disel:0.0:Vegetal:0.0
+surtidor:Eduardo:Plis:0.0:Corriente:0.0:Disel:0.0:Vegetal:0.0
+surtidor:Eduardo:Plis:0.0:Corriente:0.0:Disel:0.0:Vegetal:0.0
+surtidor:Eduardo:Plis:0.0:Corriente:0.0:Disel:0.0:Vegetal:0.0
+empleado:laura:0
+empleado:Eduardo:0
+empleado:Camilo:0
+empleado:Juan:0
+empleado:Pepe:0
