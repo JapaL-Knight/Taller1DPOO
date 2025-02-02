@@ -90,12 +90,15 @@ class SurtidorTest
 
         for( int i = 0; i < 10; i++ )
         {
+
+            Double sopa = elSurtidor.getGalonesVendidos( CORRIENTE );
             int precio = elSurtidor.venderGasolina( CORRIENTE, cantidad );
 
             int precioEsperado = ( int ) ( cantidad * VALOR_CORRIENTE );
             assertEquals( precioEsperado, precio, "El precio calculado no es el esperado" );
 
             galonesTotales += cantidad;
+            sopa = elSurtidor.getGalonesVendidos( CORRIENTE );
             assertEquals( galonesTotales, elSurtidor.getGalonesVendidos( CORRIENTE ), 0.001, "La cantidad de galones vendidos en el registro del surtidor no es correcta" );
 
             ventaTotal += precioEsperado;

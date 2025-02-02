@@ -59,7 +59,7 @@ public class GasolineraTest
 
         g1 = new Gasolinera( cantidadSurtidores, tipos, empleados );
     }
-
+    
     private void crearGasolinera2( )
     {
         int cantidadSurtidores = 4;
@@ -71,6 +71,8 @@ public class GasolineraTest
         String[] empleados = new String[]{ ALICE, BOB, CHARLY };
 
         g2 = new Gasolinera( cantidadSurtidores, tipos, empleados );
+        double galonesVendidos = g2.getSurtidor( 1 ).getGalonesVendidos( CORRIENTE );
+        String a = "a";
     }
 
     @Test
@@ -148,7 +150,8 @@ public class GasolineraTest
 
         TipoGasolina gasolinaExtra = g2.getTipoGasolina( EXTRA );
         assertEquals( CANTIDAD_EXTRA, gasolinaExtra.getCantidadDisponible( ), 0.001, "La cantidad disponible no es correcta" );
-
+        double galonesVendidos = g2.getSurtidor( 1 ).getGalonesVendidos( CORRIENTE );
+        String a = "a";
     }
 
     @Test
@@ -251,7 +254,8 @@ public class GasolineraTest
 
         TipoGasolina gasolinaExtra = g2.getTipoGasolina( EXTRA );
         assertEquals( CANTIDAD_EXTRA, gasolinaExtra.getCantidadDisponible( ), 0.001, "La cantidad disponible no es correcta" );
-
+        double galonesVendidos = g2.getSurtidor( 1 ).getGalonesVendidos( CORRIENTE );
+        String a = "a";
     }
 
     @Test
@@ -270,25 +274,32 @@ public class GasolineraTest
         assertEquals( CHARLY, e3.getNombre( ), "El empleado tiene el nombre incorrecto" );
 
         assertNull( g2.getEmpleado( "INEXISTENTE" ), "Si se busca un empleado inexistente debe retornar null" );
+        double galonesVendidos = g2.getSurtidor( 1 ).getGalonesVendidos( CORRIENTE );
+        String a = "a";
     }
 
     @Test
     public void testVenderGasolinaPorPrecioSencillo( )
-    {
+    {	
+    	double galonesVendidos = g2.getSurtidor( 1 ).getGalonesVendidos( CORRIENTE );
+        String a = "a";
         int precioDeseado = 30000;
         int precioPagado = g2.venderGasolinaPorPrecio( CORRIENTE, precioDeseado, 1 );
-
+        
+        galonesVendidos = g2.getSurtidor( 1 ).getGalonesVendidos( CORRIENTE );
+        a = "a";
         assertEquals( precioDeseado, precioPagado, "El precio pagado no es correcto" );
 
         Empleado empleadoSurtidor = g2.getSurtidor( 1 ).getEmpleadoAsignado( );
         assertEquals( precioPagado, empleadoSurtidor.getCantidadDinero( ), "La cantidad de dinero que tiene el empleado asignado al surtidor no es correcta" );
 
-        double galonesVendidos = g2.getSurtidor( 1 ).getGalonesVendidos( CORRIENTE );
+        galonesVendidos = g2.getSurtidor( 1 ).getGalonesVendidos( CORRIENTE );
         double galonesEsperados = precioPagado / ( double )VALOR_CORRIENTE;
         assertEquals( galonesEsperados, galonesVendidos, 0.01, "La cantidad de galones vendidos en el surtidor no es correcta" );
 
         double galonesDisponibles = g2.getTipoGasolina( CORRIENTE ).getCantidadDisponible( );
         assertEquals( CANTIDAD_CORRIENTE - galonesDisponibles, galonesVendidos, 0.01, "El inventario del tipo de gasolina no se actualizó correctamente" );
+        
     }
 
     @Test

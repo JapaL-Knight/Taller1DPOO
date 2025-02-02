@@ -30,7 +30,7 @@ public class Gasolinera
     private Surtidor[] surtidores;
 
     /**
-     * Un mapa de los tipos de gasolina en venta: las llaves son el nombre del tipo de gasolina
+     * Un mapa de los tipos de gasolina en evnta: las llaves son el nombre del tipo de gasolina
      */
     private Map<String, TipoGasolina> tiposGasolina;
 
@@ -128,7 +128,7 @@ public class Gasolinera
 
     public Surtidor getSurtidor( int numSurtidor )
     {
-        return surtidores[ numSurtidor ];
+        return surtidores[ numSurtidor ];/*sopa*/
     }
 
     public TipoGasolina getTipoGasolina( String nombreTipoGasolina )
